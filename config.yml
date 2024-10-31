@@ -1,0 +1,19 @@
+baseURL: "https://nasana3.github.io"
+languageCode: "en-us"
+title: "nasana3"
+
+params:
+    homeInfoParams:
+        Title: Welcome To nasana3.
+        Content: "IDK.
+        \n\n
+        LOL
+        \n\n
+        "
+
+menu:
+  main:
+      - Name: "index"
+        Pre: "<i class='fa fa-road'></i>"
+        Weight: -100
+        URL: "/pages/index/"
