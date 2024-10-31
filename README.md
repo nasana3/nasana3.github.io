@@ -1,2 +1,8 @@
 # ^-^
-## In Arbeit ¯\_(ツ)_/¯
+
+## In Arbeit \ (•◡•) /
+
+
+### About me
++ Open Source <3
++ Gaming
