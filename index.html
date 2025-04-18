@@ -1,42 +1,121 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nerdige Minimalistische Seite</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nasana3</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>In Arbeit ¯\_(ツ)_/¯ </h1>
-        <p>Hier wird eine coole Seite entstehen (ᵔᴥᵔ)</p>
-    </header>
-    <main>
-        <section>
-            <h2>Hardware</h2>
-            <ul>
-                <li>AMD Ryzen 3900X</li>
-                <li>AMD Radeon RX 7800XT</li>
-                <li>Oneplus 8T</li>
-                <li>Steam Deck</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Nützliche Tools</h2>
-            <ul>
-                <a href="https://www.proxmox.com/de/"><li>Proxmox</li></a>
-                <a href="https://www.ceph.io/"><li>Ceph</li></a>
-                <a href="https://github.com/"><li>GitHub</li></a>
-                <a href="https://www.ansible.com/"><li>Ansible</li></a>
-                <a href="https://www.docker.com/"><li>Docker</li></a>
-                <a href="https://www.mozilla.org/de/firefox/new/"><li>Firefox</li></a>
-                <a href="https://docs.paperless-ngx.com/"><li>Paperless-ngx </li></a>
-                <a href="https://community-scripts.github.io/ProxmoxVE/scripts"><li>Proxmox-Helper-Scripts</li></a>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 nasana3</p>
-    </footer>
+  <header>
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+    <div class="container">
+      <div class="logo">🟩 nasana3</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Willkommen bei nasana3.de</h1>
+      <p>Eine etwas nerdige Seite, aber du hast hierher gefunden. (ᵔᴥᵔ)</p>
+      <a href="#" class="cta-button">Nutzloser Button</a>
+    </div>
+    <section class="links">
+        <div class="container">
+          <h2>Nützliche Links</h2>
+          <table class="link-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Beschreibung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="https://www.proxmox.com/de" target="_blank">Proxmox</a></td>
+                <td>Umfassende Linux-Dokumentation</td>
+              </tr>
+              <tr>
+                <td><a href="https://docs.paperless-ngx.com/" target="_blank">Paperless-NGX</a></td>
+                <td>Dokumentenmanagement </td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/fastfetch-cli/fastfetch" target="_blank">Fastfetch</a></td>
+                <td>Tool zur Anzeige von Systeminformationen im Terminal</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="hardware">
+        <div class="container">
+          <h2>Aktuelle Hardware</h2>
+          <table class="hardware-table">
+            <thead>
+              <tr>
+                <th>Komponente</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CPU</td>
+                <td>AMD Ryzen 9 3900X</td>
+              </tr>
+              <tr>
+                <td>GPU</td>
+                <td>AMD RX 7800 XT Sapphire Pulse</td>
+              </tr>
+              <tr>
+                <td>RAM</td>
+                <td>32 GB DDR4 @ 3000 MHz</td>
+              </tr>
+              <tr>
+                <td>Motherboard</td>
+                <td>X570 AORUS ULTRA (rev. 1.0) </td>
+              </tr>
+              <tr>
+                <td>Monitor</td>
+                <td>Dell S2721DGFA 27" WQHD 164Hz</td>
+              </tr>
+              <tr>
+                <td>Peripherie</td>
+                <td>Logitech G502</td>
+              </tr>
+              <tr>
+                <td>Steam Deck</td>
+                <td>64GB with 512GB NVMe </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+        
+      
+      
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 nasana3.</p>
+    </div>
+  </footer>
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Initialisiere Theme
+  if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-mode');
+    toggleButton.textContent = '🌞';
+  }
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    const isLight = body.classList.contains('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    toggleButton.textContent = isLight ? '🌞' : '🌙';
+  });
+</script>
+
 </body>
 </html>
