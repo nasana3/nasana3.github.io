@@ -3,119 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nasana3</title>
+  <title>nasana3 – Willkommen</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
-    <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
-    <div class="container">
-      <div class="logo">🟩 nasana3</div>
+  <header class="header">
+    <div class="container nav">
+      <h1 class="logo">nasana3</h1>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Dark Mode umschalten">🌙</button>
     </div>
   </header>
 
   <section class="hero">
-    <div class="container">
-      <h1>Willkommen bei nasana3.de</h1>
+    <div class="hero-content container">
+      <h2>Willkommen bei <span class="accent">nasana3.de</span></h2>
       <p>Eine etwas nerdige Seite, aber du hast hierher gefunden. (ᵔᴥᵔ)</p>
-      <a href="#" class="cta-button">Nutzloser Button</a>
+      <a href="#links" class="btn">Erkunde mehr</a>
     </div>
-    <section class="links">
-        <div class="container">
-          <h2>Nützliche Links</h2>
-          <table class="link-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Beschreibung</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><a href="https://www.proxmox.com/de" target="_blank">Proxmox</a></td>
-                <td>Virtualization Platform</td>
-              </tr>
-              <tr>
-                <td><a href="https://docs.paperless-ngx.com/" target="_blank">Paperless-NGX</a></td>
-                <td>Dokumentenmanagement </td>
-              </tr>
-              <tr>
-                <td><a href="https://github.com/fastfetch-cli/fastfetch" target="_blank">Fastfetch</a></td>
-                <td>Tool zur Anzeige von Systeminformationen im Terminal</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-      <section class="hardware">
-        <div class="container">
-          <h2>Aktuelle Hardware</h2>
-          <table class="hardware-table">
-            <thead>
-              <tr>
-                <th>Komponente</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>CPU</td>
-                <td>AMD Ryzen 9 3900X</td>
-              </tr>
-              <tr>
-                <td>GPU</td>
-                <td>AMD RX 7800 XT Sapphire Pulse</td>
-              </tr>
-              <tr>
-                <td>RAM</td>
-                <td>32 GB DDR4 @ 3000 MHz</td>
-              </tr>
-              <tr>
-                <td>Motherboard</td>
-                <td>X570 AORUS ULTRA (rev. 1.0) </td>
-              </tr>
-              <tr>
-                <td>Monitor</td>
-                <td>Dell S2721DGFA 27" WQHD 164Hz</td>
-              </tr>
-              <tr>
-                <td>Peripherie</td>
-                <td>Logitech G502</td>
-              </tr>
-              <tr>
-                <td>Steam Deck</td>
-                <td>64GB with 512GB NVMe </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-        
-      
-      
+  </section>
 
-  <footer>
+  <main>
+    <section id="links" class="section container">
+      <h2>🧩 Nützliche Links</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3><a href="https://www.proxmox.com" target="_blank">Proxmox</a></h3>
+          <p>Virtualization Platform</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://docs.paperless-ngx.com" target="_blank">Paperless-NGX</a></h3>
+          <p>Dokumentenmanagement</p>
+        </div>
+        <div class="card">
+          <h3><a href="https://github.com/fastfetch/fastfetch" target="_blank">Fastfetch</a></h3>
+          <p>Systeminfo-Tool für Terminal</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="hardware" class="section alt">
+      <div class="container">
+        <h2>💻 Aktuelle Hardware</h2>
+        <div class="hardware-list">
+          <div><strong>CPU:</strong> AMD Ryzen 9 3900X</div>
+          <div><strong>GPU:</strong> AMD RX 7800 XT Sapphire Pulse</div>
+          <div><strong>RAM:</strong> 32 GB DDR4 @ 3000 MHz</div>
+          <div><strong>Mainboard:</strong> X570 AORUS ULTRA (1.0)</div>
+          <div><strong>Monitor:</strong> Dell S2721DGFA 27" WQHD 164 Hz</div>
+          <div><strong>Peripherie:</strong> Logitech G502</div>
+          <div><strong>Steam Deck:</strong> 64 GB + 512 GB NVMe</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 nasana3.</p>
+      <p>© 2025 nasana3 — Made with ❤️ and Tea.</p>
     </div>
   </footer>
-<script>
-  const toggleButton = document.getElementById('theme-toggle');
-  const body = document.body;
 
-  // Initialisiere Theme
-  if (localStorage.getItem('theme') === 'light') {
-    body.classList.add('light-mode');
-    toggleButton.textContent = '🌞';
-  }
-
-  toggleButton.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    const isLight = body.classList.contains('light-mode');
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    toggleButton.textContent = isLight ? '🌞' : '🌙';
-  });
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
