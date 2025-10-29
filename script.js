@@ -1,15 +1,13 @@
 const toggleBtn = document.getElementById('theme-toggle');
 const body = document.body;
 
-// gespeichertes Theme laden
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark');
-  toggleBtn.textContent = '☀️';
-}
+// Immer Darkmode aktivieren beim Laden
+body.classList.add('dark');
+toggleBtn.textContent = '☀️';
 
+// Optional: Umschalten erlauben
 toggleBtn.addEventListener('click', () => {
   body.classList.toggle('dark');
   const isDark = body.classList.contains('dark');
   toggleBtn.textContent = isDark ? '☀️' : '🌙';
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
